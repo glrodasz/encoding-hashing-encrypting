@@ -16,11 +16,12 @@ module.exports = {
 if (process?.argv?.length > 2) {
   const [, , action, string] = process?.argv;
 
-  if (action === "encode") {
-    console.log(encode(string));
-  } else if (action === "decode") {
-    console.log(decode(string));
-  } else {
-    console.log('action needs to be "encode" or "decode"');
+  switch (action) {
+    case "encode":
+      return console.log(encode(string));
+    case "decode":
+      return console.log(decode(string));
+    default:
+      return console.log('Use "encode" or "decode" action.');
   }
 }
