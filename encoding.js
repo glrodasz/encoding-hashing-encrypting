@@ -1,11 +1,11 @@
 function encode(string) {
-  const buffer = Buffer.from(string, "utf-8");
+  const buffer = Buffer.from(string, "utf8");
   return buffer.toString("base64");
 }
 
 function decode(string) {
   const buffer = Buffer.from(string, "base64");
-  return buffer.toString("utf-8");
+  return buffer.toString("utf8");
 }
 
 module.exports = {
